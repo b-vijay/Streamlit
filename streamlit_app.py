@@ -37,8 +37,7 @@ st.line_chart(sales_by_month, y="Sales")
 categories = df['category'].unique()
 option = st.selectbox('Select category', categories)
 
-# Filter DataFrame based on selection
-filtered_data = df[df['category'] == option]
+
 
 st.write("## Your additions")
 st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
