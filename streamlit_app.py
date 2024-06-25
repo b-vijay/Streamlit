@@ -63,12 +63,9 @@ difference_profit_margin = overall_profit_margin - overall_avg_profit_margin
 
 col1, col2, col3 = st.columns(3)
 with col1:
-
 st.metric(label="Total Sales", value=f"${total_sales:.2f}")
-
 with col2:
 st.metric(label="Total Profit", value=f"${total_profit:.2f}")
-
 with col3:
 st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%", delta=f"{difference_profit_margin:.2f}%")
 
