@@ -49,8 +49,7 @@ selected_subcategory = st.selectbox('Select subcategory', subcategories)
 # Filter DataFrame based on the selected subcategory
 filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
 
-monthly_sales = filtered_data.groupby(filtered_data['Order_Date'].dt.to_period('M'))['Sales'].sum()
-st.line_chart(monthly_sales)
+st.line_chart(filtered_data['Sales'])
 
 
 
