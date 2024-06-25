@@ -9,6 +9,7 @@ st.write("### Input Data and Examples")
 df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
 st.dataframe(df)
 
+
 # This bar chart will not have solid bars--but lines--because the detail data is being graphed independently
 st.bar_chart(df, x="Category", y="Sales")
 
@@ -19,9 +20,7 @@ st.dataframe(df.groupby("Category").sum())
 
 # Using as_index=False here preserves the Category as a column.  If we exclude that, Category would become the datafram index and we would need to use x=None to tell bar_chart to use the index
 st.bar_chart(df.groupby("Category", as_index=False).sum(), x="Category", y="Sales", color="#04f")
-option = st.selectbox(
-    "Choose a category",
-    ("Furniture", "Office Supplies", "Technology"))
+
 
 # Aggregating by time
 # Here we ensure Order_Date is in datetime format, then set is as an index to our dataframe
@@ -34,6 +33,12 @@ st.dataframe(sales_by_month)
 
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
+
+categories = df['category'].unique()
+option = st.selectbox('Select category', categories)
+
+# Filter DataFrame based on selection
+filtered_data = df[df['category'] == option]
 
 st.write("## Your additions")
 st.write("### (1) add a drop down for Category (https://docs.streamlit.io/library/api-reference/widgets/st.selectbox)")
