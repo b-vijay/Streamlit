@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import math
 
-st.title("Data App Assignment, on June 20th")
+st.title("Data App Assignment")
 
 st.write("### Input Data and Examples")
 df = pd.read_csv("Superstore_Sales_utf8.csv", parse_dates=True)
@@ -61,9 +61,15 @@ overall_avg_profit_margin = (overall_total_profit / overall_total_sales) * 100 i
 
 difference_profit_margin = overall_profit_margin - overall_avg_profit_margin
 
+col1, col2, col3 = st.columns(3)
+with col1:
 
 st.metric(label="Total Sales", value=f"${total_sales:.2f}")
+
+with col2:
 st.metric(label="Total Profit", value=f"${total_profit:.2f}")
+
+with col3:
 st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%", delta=f"{difference_profit_margin:.2f}%")
 
 
