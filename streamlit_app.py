@@ -34,7 +34,7 @@ st.dataframe(sales_by_month)
 # Here the grouped months are the index and automatically used for the x axis
 st.line_chart(sales_by_month, y="Sales")
 
-categories = df['category'].unique()
+categories = df['Category'].unique()
 option = st.selectbox('Select category', categories)
 
 
