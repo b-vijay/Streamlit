@@ -49,14 +49,9 @@ selected_subcategory = st.selectbox('Select subcategory', subcategories)
 # Filter DataFrame based on the selected subcategory
 filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
 
-fig, ax = plt.subplots()
-ax.plot(filtered_data['Customer_Name'], filtered_data['Sales'], marker='o', linestyle='-', color='b')
-ax.set_title(f'Sales for {option} - {selected_subcategory}')
-ax.set_xlabel('Name')
-ax.set_ylabel('Sales')
-ax.grid(True)
-plt.xticks(rotation=45)
-st.pyplot(fig)
+st.line_chart(sales_by_month, y="Sales")
+
+
 
 
 
