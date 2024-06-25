@@ -62,8 +62,8 @@ overall_avg_profit_margin = (overall_total_profit / overall_total_sales) * 100 i
 difference_profit_margin = overall_profit_margin - overall_avg_profit_margin
 
 
-st.metric(label="Total Sales", value=f"${total_sales:,}")
-st.metric(label="Total Profit", value=f"${total_profit:,}")
+st.metric(label="Total Sales", value=f"${total_sales:.2f}")
+st.metric(label="Total Profit", value=f"${total_profit:.2f}")
 st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%", delta=f"{difference_profit_margin:.2f}%")
 
 
