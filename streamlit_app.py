@@ -50,7 +50,7 @@ selected_subcategory = st.selectbox('Select subcategory', subcategories)
 filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
 
 
-line_chart_data = filtered_data[['Customer_Name', 'Sales']].set_index('Customer_Name')
+line_chart_data = filtered_data[[sales_by_month, 'Sales']].set_index(sales_by_month)
 
 # Display line chart using st.line_chart
 st.line_chart(line_chart_data)
