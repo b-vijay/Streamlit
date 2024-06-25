@@ -37,6 +37,20 @@ st.line_chart(sales_by_month, y="Sales")
 categories = df['Category'].unique()
 option = st.selectbox('Select category', categories)
 
+# Filter DataFrame based on the selected category
+filtered_df = df[df['Category'] == option]
+
+# Extract unique subcategories within the selected category
+subcategories = filtered_df['Sub_Category'].unique()
+
+# Create a dropdown to select a subcategory
+selected_subcategory = st.selectbox('Select subcategory', subcategories)
+
+# Filter DataFrame based on the selected subcategory
+filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
+
+
+
 
 
 st.write("## Your additions")
