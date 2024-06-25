@@ -51,6 +51,14 @@ filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
 
 st.line_chart(filtered_data['Sales'])
 
+total_sales = filtered_data['Sales'].sum()
+total_profit = filtered_data['Profit'].sum()
+overall_profit_margin = (total_profit / total_sales) * 100 if total_sales != 0 else 0
+
+st.metric(label="Total Sales", value=f"${total_sales:,}")
+st.metric(label="Total Profit", value=f"${total_profit:,}")
+st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%")
+
 
 
 
