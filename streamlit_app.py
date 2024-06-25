@@ -51,7 +51,7 @@ filtered_data = filtered_df[filtered_df['Sub_Category'] == selected_subcategory]
 
 fig, ax = plt.subplots()
 ax.plot(filtered_data['Customer_Name'], filtered_data['Sales'], marker='o', linestyle='-', color='b')
-ax.set_title(f'Sales for {selected_category} - {selected_subcategory}')
+ax.set_title(f'Sales for {option} - {selected_subcategory}')
 ax.set_xlabel('Name')
 ax.set_ylabel('Sales')
 ax.grid(True)
