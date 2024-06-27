@@ -70,7 +70,6 @@ st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}
 
 
 
-st.write("### (4) show three metrics (https://docs.streamlit.io/library/api-reference/data/st.metric) for the selected items in (2): total sales, total profit, and overall profit margin (%)")
-st.write("### (5) use the delta option in the overall profit margin metric to show the difference between the overall average profit margin (all products across all categories)")
+
 
 
