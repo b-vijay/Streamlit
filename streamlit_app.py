@@ -56,11 +56,16 @@ total_sales = filtered_data['Sales'].sum()
 total_profit = filtered_data['Profit'].sum()
 overall_profit_margin = (total_profit / total_sales) * 100 if total_sales != 0 else 0
 
+overall_total_sales = df['Sales'].sum()
+overall_total_profit = df['Profit'].sum()
+overall_avg_profit_margin = (overall_total_profit / overall_total_sales) * 100 if overall_total_sales != 0 else 0
+
+difference_profit_margin =  overall_avg_profit_margin- overall_profit_margin
 
 
 st.metric(label="Total Sales", value=f"${total_sales:.2f}")
 st.metric(label="Total Profit", value=f"${total_profit:.2f}")
-st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%", delta=f"{overall_profit_margin:.2f}%")
+st.metric(label="Overall Profit Margin (%)", value=f"{overall_profit_margin:.2f}%", delta=f"{difference_profit_margin:.2f}%")
 
 
 
