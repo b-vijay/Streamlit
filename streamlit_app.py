@@ -60,7 +60,7 @@ overall_total_sales = df['Sales'].sum()
 overall_total_profit = df['Profit'].sum()
 overall_avg_profit_margin = (overall_total_profit / overall_total_sales) * 100 if overall_total_sales != 0 else 0
 
-difference_profit_margin =  overall_avg_profit_margin- overall_profit_margin
+difference_profit_margin =   overall_profit_margin- overall_avg_profit_margin
 
 
 st.metric(label="Total Sales", value=f"${total_sales:.2f}")
